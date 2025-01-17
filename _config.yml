@@ -16,7 +16,7 @@ timezone:
 
 title: Amirah Nathania # the main title
 
-tagline: My Personal Blog # it will display as the subtitle
+tagline: Creating Digital Solutions with a Creative and Functional Touch. # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
  blog, tremo, github
@@ -98,8 +98,7 @@ theme_mode: # [light | dark]
 cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: 
-
+avatar: 'assets\media\Foto Profil 3.jpeg'
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
 social_preview_image: # string, local or CORS resources
