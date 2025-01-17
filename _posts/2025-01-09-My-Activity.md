@@ -5,6 +5,8 @@ categories: [Actvity, me]
 tags: [Aktivitas]     # TAG names should always be lowercase
 media_subpath : /assets/media/
 description: Haii, ini aktivitas saya waktu SMA
+image:
+    path: /Cover.jpeg
 ---
 
 Selama masa sekolah menegah saya, saya adalah seorang siswa aktif dengan antusias berpartisipasi dalam berbagai organisasi dan kegiatan sekolah. Pengalaman-pengalaman ini memungkin saya untuk mengembangka keterampilan yang berharga, membangun kerja sama tim, dan memberikan kontribusi yang berarti bagi sekolah saya.

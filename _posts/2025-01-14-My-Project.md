@@ -5,6 +5,8 @@ categories: [project, me]
 tags: [Project]             # TAG names should always be lowercase
 media_subpath : /assets/media/
 description: Haii, ini projek saya selama S1 
+image:
+    path: /Background.jpeg
 ---
 
 Selama masa kuliah di jurusan informatika, saya aktif berpartisipasi dalam berbagai kegiatan dan proyek yang mendukung pengembangan keterampilan teknis dan kerja sama tim. Saya terlibat dalam kompetisi yang relevan dengan bidang teknologi, yang membantu saya memperdalam pengetahuan dan pengalaman praktid. Komitmen ini mencerminkan antusiasme saya terhadap inovasi dan kontribusi dalam dunia informatika.
