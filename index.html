@@ -1,4 +1,240 @@
----
-layout: home
-# Index page
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amirah Nathania's Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#FF69B4',
+                        'secondary': '#FFB6C1',
+                        'accent': '#E91E63',
+                        'neutral': '#FDE7F2',
+                    },
+                    fontFamily: {
+                        'playfair' : ['Playfair Display', 'serif'],
+                        'nunito': ['Nunito', 'sans-serif'],
+                        'sans': ['Nunito', 'sans-serif'], // Override default sans font
+                        'serif': ['Playfair Display', 'serif'], // Override default serif font
+                    }
+                },
+            },
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .active-tab {
+            border-bottom: 3px solid #E91E63; /* Use accent color for active tab */
+            color: #E91E63; /* Use accent color for active tab text */
+            font-weight: 600;
+        }
+
+        @keyframes jump {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px); /* Atur ketinggian loncatan di sini */
+            }
+            60% {
+                transform: translateY(-5px); /* Sedikit pantulan */
+            }
+        }
+
+        .animate-jump {
+            animation: jump 1.5s infinite ease-in-out; /* Atur durasi dan kecepatan animasi di sini */
+        }
+    </style>
+</head>
+<body class="bg-neutral text-gray-700 font-nunito min-h-screen">
+    <div class="container mx-auto px-4 py-12 max-w-6xl">
+        <header class="text-center mb-16">
+            <div class="mb-4">
+                <img src="Foto Profil.jpeg" alt="Foto Profil Amirah Nathania" class="rounded-full w-40 h-40 object-cover mx-auto border-4 border-secondary">
+            </div>
+            <h1 class="text-4xl md:text-5xl font-playfair font-bold mb-2 text-primary animate-jump">Hi, I'm Amirah Nathania! 👋</h1>
+            <p class="text-xl text-secondary"><span class="text-accent">Mahasiswa Informatika - Application Development</span></p>
+        </header>
+
+        <div class="flex justify-center mb-12 border-b border-gray-300">
+            <button id="about-tab" class="px-6 py-3 text-lg font-medium active-tab">My Profile</button>
+            <button id="projects-tab" class="px-6 py-3 text-lg font-medium active-tab">My Project</button>
+        </div>
+
+        <section id="about-section" class="mb-20">
+            <h2 class="text-3xl font-playfair font-bold mb-6 text-accent flex items-center">
+                ✨ About Me ✨
+            </h2>
+
+            <div class="bg-white rounded-xl p-8 md:p-10 shadow-lg grid grid-cols-1 lg:grid-cols-2 gap-10">
+                <div>
+                    <div>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            I am a student of Ciputra University Makassar, majoring in Informatic with specialization in Application Development. I have a passion in creating innovative digital solutions to solve various technological challenges.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-primary">💼 Activity Experience</h3>
+                        <ul class="list-disc list-inside mb-6 text-gray-700 leading-relaxed">
+                            <li>SMA : SMAIT Al-Fityan School Gowa</li>
+                            <li>S1 : Universitas Ciputra Kampus Kota Makassar</li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-primary">💡 What I Do?</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            I have good time management skills, document management with Microsoft Office, and solid team collaboration. Various organizational and committee experiences have shaped my ability to think critically and work effectively, making me someone who is ready to face challenges in the digital world.
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-primary">🚀 Passion & Experience</h3>
+                        <p class="text-gray-700 mb-6 leading-relaxed">
+                            My main focus is on UI/UX design, web development, and technology-based solutions that improve efficiency and user experience. Besides understanding the technical aspects, I also have experience in digital project management, documentation, and teamwork, enabling me to contribute maximally in every project I undertake.
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <div>
+                        <h3 class="text-xl font-semibold mb-4 text-primary">💼 Activity Experience</h3>
+                        <ul class="list-disc list-inside text-gray-700 leading-relaxed">
+                            <li>Liaison Officer - NPLC 12th (2024-2025)</li>
+                            <li>Ketua Bidang Kerohanian - Organisasi Pramuka (2021-2023)</li>
+                            <li>Divisi Fundraising - Expo Piala Bupati Gowa 2023</li>
+                            <li>Peserta Raimuna Cabang Gowa 2023</li>
+                            <li>Master of Ceremony di berbagai acara sekolah</li>
+                            <li>Marketing & Sponsorship - DevForge 2025</li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-100 p-4 rounded-lg mt-6">
+                        <h3 class="text-2xl font-playfair font-semibold text-primary mb-6">Keahlian:</h3>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm">UI/UX Design</span>
+                            <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm">Web Development</span>
+                            <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm">Project Management</span>
+                            <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm">Team Collaboration</span>
+                            <span class="bg-secondary text-white px-3 py-1 rounded-full text-sm">Microsoft Office</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-6">
+                        <h3 class="text-2xl font-playfair font-semibold text-primary mb-6">💖 Let's Connect ! 💖</h3>
+                        <p class="text-gray-700 leading-relaxed mb-4">Saya selalu terbuka untuk kolaborasi dan kesempatan baru. Jangan ragu untuk menghubungi saya!</p>
+                        <ul class="space-y-4">
+                            <li>📧 Email: <a href="mailto:thaniafahreza@gmail.com" class="text-secondary hover:underline font-semibold">thaniafahreza@gmail.com</a></li>
+                            <li>📸 Instagram: <a href="https://instagram.com/thaniafahreza_26" class="text-secondary hover:underline font-semibold" target="_blank">@thaniafahreza_26</a></li>
+                        </ul>
+                        <button class="bg-primary text-white font-bold rounded-full py-3 px-6 mt-6 hover:bg-accent transition duration-300 shadow-md">Mari Berkenalan!</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects-section" class="mb-20 hidden">
+            <h2 class="text-3xl font-playfair font-bold mb-8 text-accent">My Project 🚀</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-[10px_10px_10px_#FFB6C1] hover:-translate-y-1 duration-500">
+                    <div class="h-48 bg-gradient-to-r from-secondary to-accent flex items-center justify-center overflow-hidden">
+                        <img src="Background.jpeg" alt="Gambar Proyek Game" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6"> 
+                        <h3 class="text-xl font-semibold mb-2 text-primary ">Project to make a Game</h3>
+                        <p class="text-gray-600 mb-4">Made 2 Games, namely tic tac toe and guess the numbers.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-xs">Python</span>
+                            <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-xs">Game</span>
+                            <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-xs">Project</span>
+                        </div>
+                        <a href="projectGame.html" id="lihatProyekGame" class="text-accent hover:text-primary font-medium">Lihat Proyek →</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-[10px_10px_10px_#FFB6C1] hover:-translate-y-1 duration-500">
+                    <div class="h-48 bg-gradient-to-r from-accent to-primary flex items-center justify-center">
+                        <img src="Gambar Prototype.jpeg" alt="Gambar Proyek Game" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Design Prototype</h3>
+                        <p class="text-gray-600 mb-4">Prototype Aplikasi Suara-Ku!</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-xs">Design</span>
+                            <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-xs">Figma</span>
+                            <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-xs">Application</span>
+                        </div>
+                        <a href="DesignPrototype.html" class="text-accent hover:text-primary font-medium">Lihat Proyek →</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-[10px_10px_10px_#FFB6C1] hover:-translate-y-1 duration-500">
+                    <div class="h-48 bg-gradient-to-r from-primary to-secondary flex items-center justify-center">
+                        <img src="Gambar Organisasi.jpeg" alt="Gambar Organisasi" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-primary">Pengalaman Organisasi</h3>
+                        <p class="text-gray-600 mb-4">Beberapa kegiatan organizational.</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-xs">React</span>
+                            <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-xs">Firebase</span>
+                            <span class="bg-gray-200 text-gray-700 px-2 py-1 rounded text-xs">Node.js</span>
+                        </div>
+                        <a href="PengalamanOrganisasi.html" class="text-accent hover:text-primary font-medium">Lihat Proyek →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="text-center text-gray-500 text-sm mt-16">
+            <p>© 2024 Amirah Nathania. Semua hak dilindungi.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        const aboutTab = document.getElementById('about-tab');
+        const projectsTab = document.getElementById('projects-tab');
+        const aboutSection = document.getElementById('about-section');
+        const projectsSection = document.getElementById('projects-section');
+
+        function showAbout() {
+            aboutTab.classList.add('active-tab');
+            projectsTab.classList.remove('active-tab');
+            aboutSection.classList.remove('hidden');
+            projectsSection.classList.add('hidden');
+        }
+
+        function showProjects() {
+            aboutTab.classList.remove('active-tab');
+            projectsTab.classList.add('active-tab');
+            aboutSection.classList.add('hidden');
+            projectsSection.classList.remove('hidden');
+        }
+
+        aboutTab.addEventListener('click', showAbout);
+        projectsTab.addEventListener('click', showProjects);
+
+        // Set About Me as default active tab on load
+        showAbout();
+
+        const lihatProyekGameButton = document.getElementById('lihatProyekGame');
+
+        lihatProyekGameButton.addEventListener('click', function(event) {
+            event.preventDefault(); 
+
+            document.body.classList.add('fade-out');
+
+            setTimeout(function() {
+            window.location.href = lihatProyekGameButton.getAttribute('href');
+            }, 500);
+        });
+    </script>
+</body>
+</html>

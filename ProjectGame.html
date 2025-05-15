@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kode Game Tebak Angka</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#FF69B4',
+                        'secondary': '#FFB6C1',
+                        'accent': '#E91E63',
+                        'neutral': '#FDE7F2',
+                        'code-bg': '#f8f8f8',
+                        'code-text': '#272822',
+                        'code-comment': '#75715e',
+                        'code-keyword': '#66d9ef',
+                        'code-string': '#e6db74',
+                        'code-function': '#a6e22e',
+                        'code-number': '#ae81ff',
+                    },
+                    fontFamily: {
+                        'mono': ['ui-monospace', 'SFMono-Regular', 'Menlo', 'Monaco', 'Consolas', 'Liberation Mono', 'Courier New', 'monospace'],
+                    },
+                },
+            },
+        }
+    </script>
+    
+    <style>
+    .fade-out {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-neutral font-mono text-code-text p-8">
+    <div class="container mx-auto bg-white rounded-xl shadow-lg p-10">
+        <p class="mb-6 text-sm"><p class="mt-6 text-gray-600 text-sm">During my studies in Informatics, I actively participated in various activities and projects that supported the development of technical skills and teamwork. I was involved in competitions relevant to the technology field, which helped me deepen my knowledge and practical experience. This commitment reflects my enthusiasm for innovation and contribution to the world of informatics.
+            Here are 2 projects that I made:</p></p>
+        <p class="text-3xl font-bold mt-6 mb-2 text-accent">1. Guess The Numbers (Python)</p>
+        <pre class="bg-code-bg rounded-md p-6 overflow-x-auto">
+            <code class="text-sm">
+                <span class="code-keyword">import</span> <span class="code-keyword">random</span>
+
+                <span class="code-function">print</span>(<span class="code-string">"Selamat datang di Game Tebak Angka :)"</span>
+
+                <span class="code-comment"># Masukkan jumlah pemain dan nama-nama pemain</span>
+                jumlah_pemain = <span class="code-keyword">int</span>(<span class="code-function">input</span>(<span class="code-string">"Masukkan jumlah pemain: "</span>))
+                pemain = []
+                <span class="code-keyword">for</span> i <span class="code-keyword">in</span> <span class="code-function">range</span>(jumlah_pemain):
+                    nama = <span class="code-function">input</span>(f<span class="code-string">"Masukkan nama pemain {i + 1}: "</span>)
+                    pemain.<span class="code-function">append</span>(nama)
+
+                <span class="code-comment"># Memilih angka target</span>
+                target_number = <span class="code-function">random</span>.<span class="code-function">randint</span>(<span class="code-number">1</span>, <span class="code-number">100</span>)
+                <span class="code-function">print</span>(<span class="code-string">"Sebuah angka telah dipilih antara 1-100. Siapakah yang dapat menebaknya?"</span>)
+
+                <span class="code-function">print</span>(<span class="code-string">"\nPermainan dimulai!"</span>)
+                tebakan_benar = <span class="code-keyword">False</span>
+                turn = <span class="code-number">0</span>
+
+                <span class="code-keyword">while</span> <span class="code-keyword">not</span> tebakan_benar:
+                    pemain_sekarang = pemain[turn % jumlah_pemain] <span class="code-comment"># Tentukan pemain yang sedang menebak</span>
+                    tebak = <span class="code-keyword">int</span>(<span class="code-function">input</span>(f<span class="code-string">"{pemain_sekarang}, masukkan tebakan anda: "</span>))
+
+                    <span class="code-keyword">if</span> tebak == target_number:
+                        <span class="code-function">print</span>(f<span class="code-string">"Selamat {pemain_sekarang}! Anda telah menebak angka yang benar: {target_number}"</span>)
+                        tebakan_benar = <span class="code-keyword">True</span>
+                    <span class="code-keyword">elif</span> tebak < target_number:
+                        <span class="code-function">print</span><span class="code-string">"Terlalu kecil! Coba lagi :("</span>)
+                    <span class="code-keyword">else</span>:
+                        <span class="code-function">print</span><span class="code-string">"Terlalu besar! Coba lagi :("</span>)
+
+                    turn += <span class="code-number">1</span>       <span class="code-comment"># Pindah ke giliran pemain berikutnyya</span>
+
+                <span class="code-function">print</span>(<span class="code-string">"Permainan selesai. Terima kasih telah bermain :)"</span>)
+            </code>
+        </pre>
+        <p class="mt-6 text-gray-600 text-sm">This code is a terminal (console) based number guessing game program that supports multi-player mode. The program is designed to entertain players with the challenge of guessing random numbers between 1 to 100. The purpose of this game is to provide an interactive number guessing game experience, Train the player's logic in estimating the target number based on clues (“Too big” or “Too small”), and support multiple players playing in turns.</p>
+
+        <p class="text-3xl font-bold mt-6 mb-2 text-accent">2. Tic Tac Toe (Python)</p>
+        <pre class="bg-code-bg rounded-md p-6 overflow-x-auto">
+            <code class="text-sm">
+                <span class="code-comment"># Fungsi untuk mencetak papan permainan</span>
+                <span class="keyword">def</span> <span class="function">print_board</span>(board):
+                    <span class="function">print</span>(<span class="string">"TICTACTOE"</span>)
+                    <span class="function">print</span>(<span class="string">"=========="</span>)
+                    <span class="function">print</span>(f<span class="string">"|{board[0]}|{board[1]}|{board[2]}|"</span>)
+                    <span class="function">print</span>(<span class="string">"----------"</span>)
+                    <span class="function">print</span>(f<span class="string">"|{board[3]}|{board[4]}|{board[5]}|"</span>)
+                    <span class="function">print</span>(<span class="string">"----------"</span>)
+                    <span class="function">print</span>(f<span class="string">"|{board[6]}|{board[7]}|{board[8]}|"</span>)
+                    <span class="function">print</span>()
+
+                <span class="comment"># Fungsi untuk mengecek apakah ada pemenang</span>
+                <span class="keyword">def</span> <span class="function">check_win</span>(board, player):
+                    win_conditions = [
+                        [<span class="number">0</span>, <span class="number">1</span>, <span class="number">2</span>], [<span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>], [<span class="number">6</span>, <span class="number">7</span>, <span class="number">8</span>],  <span class="comment"># Baris</span>
+                        [<span class="number">0</span>, <span class="number">3</span>, <span class="number">6</span>], [<span class="number">1</span>, <span class="number">4</span>, <span class="number">7</span>], [<span class="number">2</span>, <span class="number">5</span>, <span class="number">8</span>],  <span class="comment"># Kolom</span>
+                        [<span class="number">0</span>, <span class="number">4</span>, <span class="number">8</span>], [<span class="number">2</span>, <span class="number">4</span>, <span class="number">6</span>]              <span class="comment"># Diagonal</span>
+                    ]
+                    <span class="keyword">for</span> condition <span class="keyword">in</span> win_conditions:
+                        <span class="keyword">if</span> board[condition[<span class="number">0</span>]] == board[condition[<span class="number">1</span>]] == board[condition[<span class="number">2</span>]] == player:
+                            <span class="keyword">return</span> <span class="keyword">True</span>
+                    <span class="keyword">return</span> <span class="keyword">False</span>
+
+                <span class="comment"># Fungsi utama untuk permainan</span>
+                <span class="keyword">def</span> <span class="function">tic_tac_toe</span>():
+                    board = [<span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>, <span class="string">'6'</span>, <span class="string">'7'</span>, <span class="string">'8'</span>, <span class="string">'9'</span>] <span class="comment"># Untuk mewakili posisi yang dapat di pilih pemain</span>
+                    players = [<span class="string">'X'</span>, <span class="string">'O'</span>] <span class="comment"># Simbol untuk pemain</span>
+                    turn = <span class="number">0</span>  <span class="comment"># 0 untuk Player 1 (X), 1 untuk Player 2 (O)</span>
+
+                    <span class="keyword">while</span> <span class="keyword">True</span>:
+                        <span class="function">print_board</span>(board)
+                        current_player = players[turn % <span class="number">2</span>]
+                        move = <span class="function">input</span>(f<span class="string">"Player {turn % 2 + 1} ({current_player}): "</span>)
+
+                        <span class="comment"># Validasi input</span>
+                        <span class="keyword">if</span> move.<span class="function">isdigit</span>() <span class="keyword">and</span> <span class="keyword">int</span>(move) <span class="keyword">in</span> <span class="function">range</span>(<span class="number">1</span>, <span class="number">10</span>) <span class="keyword">and</span> board[<span class="keyword">int</span>(move) - <span class="number">1</span>] <span class="keyword">not</span> <span class="keyword">in</span> players:
+                            board[<span class="keyword">int</span>(move) - <span class="number">1</span>] = current_player
+                        <span class="keyword">else</span>:
+                            <span class="function">print</span>(<span class="string">"Pilihan tidak valid, silakan coba lagi."</span>)
+                            <span class="keyword">continue</span>
+
+                        <span class="comment"># Mengecek kemenangan</span>
+                        <span class="keyword">if</span> <span class="function">check_win</span>(board, current_player):
+                            <span class="function">print_board</span>(board)
+                            <span class="function">print</span>(f<span class="string">"Player {turn % 2 + 1} ({current_player}) WIN!!"</span>)
+                            <span class="keyword">break</span>
+
+                        <span class="comment"># Mengecek apakah papan penuh</span>
+                        <span class="keyword">if</span> turn == <span class="number">8</span>:  <span class="comment"># 9 langkah tanpa pemenang berarti draw</span>
+                            <span class="function">print_board</span>(board)
+                            <span class="function">print</span>(<span class="string">"DRAW!"</span>)
+                            <span class="keyword">break</span>
+
+                        turn += <span class="number">1</span>
+
+                <span class="comment"># Menjalankan permainan</span>
+                <span class="function">tic_tac_toe</span>()
+            </code>
+        </pre>
+        <p class="mt-6 text-gray-600 text-sm">This code is an implementation of a text-based Tic Tac Toe game. The game is played by two players in turn, with the goal of making a straight line of three equal symbols (either horizontal, vertical or diagonal) on the game board. The objectives of this game are to Create a simplified version of the Tic Tac Toe game that can be played through a terminal, Develop turn-based game logic for two players and Provide a gaming experience with input validation and win or draw detection. Translated with DeepL.com (free version).</p>
+
+        <a href="aboutMe.html" class="inline-block mt-4 bg-secondary text-white font-bold rounded-full py-2 px-4 hover:bg-accent transition duration-300 shadow-md">Back to Portfolio</a>
+    </div>
+</body>
+</html>
