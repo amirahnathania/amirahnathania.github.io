@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calculus is FUN</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    pre {
+      background-color: #f8f8f8;
+      padding: 1rem;
+      border-radius: 0.5rem;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+<body class="bg-pink-100 font-sans text-gray-800">
+
+  <!-- ✅ NAVBAR -->
+  <nav class="fixed top-0 left-0 w-full bg-white shadow z-50">
+    <div class="max-w-screen-xl mx-auto px-4 py-4 flex flex-wrap space-x-6 font-semibold text-gray-800">
+      <span class="font-bold">Calculus is FUN</span>
+      <a href="#limit" class="nav-link">Limit</a>
+      <a href="#turunan" class="nav-link">Turunan</a>
+      <a href="#chain" class="nav-link">Chain Rule</a>
+      <a href="#riemann" class="nav-link">Riemann Sum</a>
+      <a href="#integral-tentu" class="nav-link">Integral Tentu</a>
+      <a href="#integral-tak-tentu" class="nav-link">Integral Tak Tentu</a>
+      <a href="#turunan-numerik" class="nav-link">Turunan Numerik</a>
+      <a href="#integral-numerik" class="nav-link">Integral Numerik</a>
+    </div>
+  </nav>
+
+  <div class="h-24"></div> <!-- Spacer for fixed navbar -->
+
+  <!-- ✅ SECTION: LIMIT -->
+<section id="limit" class="container mx-auto bg-white rounded-xl shadow-lg p-10 mb-10">
+    <h2 class="text-3xl font-bold text-pink-600 mb-4">Limit</h2>
+    <p class="leading-relaxed mb-4">Pernahkah anda bertanya bagaimana caranya agar kita bisa memahami apa yang terjadi pada suatu fungsi saat kita mendekati suatu titik, tetapi tidak pernah benar-benar mencapainya?</p>
+    <p class="leading-relaxed mb-4">Konsep ini adalah tulang punggung kalkulus, memungkinkan kita untuk memperkirakan perilaku fungsi pada titik-titik krusial, bahkan saat fungsi itu sendiri mungkin tidak terdefinisi. Limit membantu kita menemukan kemiringan garis singgung dan kecepatan sesaat, yang akan meluas ke diferensial dan integral.</p>
+    <h3 class="font-bold text-md">Apa itu Limit?</h3>
+    <p class="leading-relaxed mb-4">Secara intuitif, limit suatu fungsi f(x) saat x mendekati nilai a adalah nilai L yang didekati oleh f(x). Bayangkan kamu berjalan di jalur pegunungan menuju puncak. Limit adalah ketinggian puncak yang kamu dekati, meskipun kamu mungkin tidak bisa melangkah tepat di puncaknya.</p>
+    <h3 class="font-bold text-md">Definisi Formal Limit :</h3>
+    <p class="leading-relaxed mb-4">Kita menulis lim x → a f ( x ) = L jika kita dapat membuat nilai f ( x ) sedekat mungkin dengan L dengan mengambil x yang cukup dekat dengan a (dari kedua sisi), tetapi tidak harus sama dengan a . Ini berarti perilaku fungsi di sekitar a -lah yang penting, bukan di a itu sendiri.</p>
+
+    <p class="mb-4">Limit Satu Sisi : Seperti berjalan di jalan satu arah.</p>
+    <p class="mb-4">Limit Kiri: limₓ→ₐ⁻ f(x) = L, berarti f(x) mendekati L saat x mendekati a dari nilai lebih kecil dari a.</p>
+    <p class="mb-4">Limit Kanan: limₓ→ₐ⁺ f(x) = L, berarti f(x) mendekati L saat x mendekati a dari nilai lebih besar dari a.</p>
+    <p class="mb-4">Limit dua sisi ada jika dan hanya jika limit kiri dan kanan ada dan bernilai sama.</p>
+
+    <h2 class="text-2xl font-bold text-primary mt-8 mb-4">Misteri Limit Tak Hingga dan Asimtot</h2>
+      <p class="mb-4">Kadang-kadang, fungsi bisa 'melambung' atau 'menukik' tanpa batas saat mendekati suatu titik atau saat x menjadi sangat besar/kecil.</p>
+      <p class="mb-4">Limit Tak Hingga: limₓ→ₐ f(x) = ∞ atau −∞.</p>
+      <p class="mb-4">Asimtot Vertikal: x = a jika f(x) → ∞ atau −∞ saat x mendekati a.</p>
+      <p class="mb-4">Limit di Tak Hingga: limₓ→∞ f(x) = L atau limₓ→−∞ f(x) = L.</p>
+      <p class="mb-4">Asimtot Horizontal: y = L jika limit di tak hingga bernilai L.</p>
+
+    <h2 class="text-2xl font-bold text-primary mt-8 mb-4">Contoh Soal</h2>
+    <p class="font-semibold">1. Tentukan nilai dari limₓ→2 (x² − x + 2)</p>
+    <div class="bg-pink-100 rounded-lg p-4">
+        <p><strong>Penyelesaian:</strong></p>
+        <p>Karena f(x) = x² − x + 2 adalah fungsi polinomial, ia kontinu di setiap titik. Kita bisa langsung substitusikan nilai x = 2 ke dalam fungsi.</p>
+        <p>limₓ→2 (x² − x + 2) = (2)² − (2) + 2 = 4 − 2 + 2 = 4.</p>
+        <p class="font-bold mt-2">Jadi, nilai limitnya adalah 4.</p>
+    </div>
+
+    <p class="font-semibold">2. Estimasi limₜ→0 (√(t² + 9) − 3) / t²</p>
+    <div class="bg-pink-100 rounded-lg p-4 mt-4">
+    <p><strong>Penyelesaian:</strong></p>
+    <p>Kita akan membuat tabel nilai untuk f(t) = (√(t² + 9) − 3) / t² saat t mendekati 0:</p>
+    <div class="overflow-x-auto">
+        <table class="table-auto w-full mt-4 text-center bg-white">
+            <thead>
+                <tr class="bg-pink-200">
+                    <th class="border border-gray-300">t</th>
+                    <th class="border border-gray-300">f(t)</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td class="border border-gray-300">±1.0</td><td class="border border-gray-300">0.16228</td></tr>
+                <tr><td class="border border-gray-300">±0.5</td><td class="border border-gray-300">0.16553</td></tr>
+                <tr><td class="border border-gray-300">±0.1</td><td class="border border-gray-300">0.16662</td></tr>
+                <tr><td class="border border-gray-300">±0.05</td><td class="border border-gray-300">0.16666</td></tr>
+                <tr><td class="border border-gray-300">±0.01</td><td class="border border-gray-300">0.16667</td></tr>
+            </tbody>\]
+        </table>
+    </div>
+        <p class="mt-4">Dari tabel, saat t mendekati 0, nilai f(t) tampaknya mendekati 0.166666… atau 1/6.</p>
+        <p class="font-bold">Jadi, estimasi nilai limitnya adalah 1/6.</p>
+    </div>
+
+    <p class="font-semibold">3. Investigasi limₓ→0 sin(π / x)</p>
+    <div class="bg-pink-100 rounded-lg p-4 mt-4">
+        <p><strong>Penyelesaian:</strong></p>
+        <p>Untuk menginvestigasi limₓ→0 sin(π / x), kita bisa melihat nilai fungsi untuk x yang mendekati 0.</p>
+        <p>Jika x = 1 / n untuk n bilangan bulat, maka sin(π / x) = sin(nπ) = 0. Ini terjadi untuk x = 1, 1/2, 1/3, ...</p>
+        <p>Namun, jika x = 1 / (n + 1/2), maka sin(π / x) = sin((n + 1/2)π). Ini menghasilkan nilai 1 (jika n genap) atau -1 (jika n ganjil).</p>
+        <p>Misalnya, untuk x = 2 / π ≈ 0.636, maka sin(π / (2 / π)) = sin(π² / 2) ≈ sin(4.93) ≈ -0.96.</p>
+        <p class="mt-2">Karena nilai fungsi berosilasi antara -1 dan 1 secara tak terbatas saat x mendekati 0 dan tidak mendekati satu nilai tunggal, maka limit ini tidak ada.</p>
+        <p class="font-bold">Jadi, limₓ→0 sin(π / x) tidak ada.</p>
+    </div>
+
+    <p class="font-semibold">4. Tentukan asimtot horizontal dari f(x) = (x² − 1)/(x² + 1)</p>
+    <div class="bg-pink-100 rounded-lg p-4 mt-4">
+        <p><strong>Penyelesaian:</strong></p>
+        <p>Untuk menemukan asimtot horizontal, kita perlu mengevaluasi limit saat x → ∞ dan x → −∞.</p>
+        <p>Kita bagi pembilang dan penyebut dengan pangkat tertinggi dari x, yaitu x².</p>
+        <p>limₓ→∞ (x² − 1)/(x² + 1) = limₓ→∞ (1 − 1/x²)/(1 + 1/x²)</p>
+        <p>Karena limₓ→∞ 1/x² = 0, kita dapatkan:</p>
+        <p>limₓ→∞ (1 − 0)/(1 + 0) = 1/1 = 1.</p>
+        <p>Untuk x → −∞, perhitungannya sama:</p>
+        <p>limₓ→−∞ (x² − 1)/(x² + 1) = limₓ→−∞ (1 − 1/x²)/(1 + 1/x²) = 1.</p>
+        <p class="font-bold mt-2">Karena limₓ→∞ f(x) = 1 dan limₓ→−∞ f(x) = 1, maka asimtot horizontalnya adalah y = 1.</p>
+    </div>
+    
+    <p class="font-semibold">5. Carilah limₓ→3⁺ (2x / (x−3)) dan limₓ→3⁻ (2x / (x−3))</p>
+    <div class="bg-pink-100 rounded-lg p-4 mt-4">
+        <p><strong>Penyelesaian:</strong></p>
+        <p>Saat x → 3, pembilang 2x → 6 dan penyebut x−3 → 0. Ini menunjukkan limit tak hingga.</p>
+        <p><strong>Untuk limₓ→3⁺ (2x / (x−3)):</strong></p>
+        <p>Jika x mendekati 3 dari kanan (lebih besar dari 3), maka x−3 → bilangan positif kecil. Maka 2x / (x−3) → ∞.</p>
+        <p><strong>Untuk limₓ→3⁻ (2x / (x−3)):</strong></p>
+        <p>Jika x mendekati 3 dari kiri (lebih kecil dari 3), maka x−3 → bilangan negatif kecil. Maka 2x / (x−3) → −∞.</p>
+        <p class="font-bold mt-2">Hasil: limₓ→3⁺ (2x / (x−3)) = ∞ dan limₓ→3⁻ (2x / (x−3)) = −∞</p>
+      </div>
+</section>
+
+  <!-- ✅ SECTION: TURUNAN -->
+  <section id="turunan" class="container mx-auto bg-white rounded-xl shadow-lg p-10 mb-10">
+    <h2 class="text-3xl font-bold text-pink-600 mb-4">Turunan</h2>
+      <p class="leading-relaxed mb-4">Apakah kamu pernah ingin tahu seberapa cepat sesuatu berubah pada suatu momen tertentu? Misalnya, kecepatan mobil pada speedometer, atau laju pertumbuhan populasi? Di sinilah turunan bersinar! Turunan adalah inti dari kalkulus diferensial, sebuah alat matematis yang memungkinkan kita untuk mengukur dan memahami laju perubahan instan, bukan hanya rata-rata.</p>
+
+      <h3 class="text-2xl font-bold text-primary mt-6 mb-2">Definisi Turunan</h3>
+      <p class="mb-4">Turunan dari suatu fungsi <em>f</em> pada suatu bilangan <em>a</em> adalah kemiringan garis singgung ke grafik fungsi tersebut di titik itu.</p>
+      <p class="mb-4">Turunan pada titik <em>a</em> didefinisikan sebagai:</p>
+      <p class="bg-gray-100 p-4 rounded font-mono text-sm">f′(a) = limₕ→0 (f(a + h) − f(a)) / h</p>
+      <p class="bg-gray-100 p-4 rounded font-mono text-sm">f′(a) = limₓ→a (f(x) − f(a)) / (x − a)</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Interpretasi Turunan</h3>
+      <ul class="list-disc ml-6 mb-4">
+        <li><strong>Kemiringan Garis Singgung:</strong> f′(a) adalah kemiringan garis yang hanya menyentuh kurva di titik (a, f(a)).</li>
+        <li><strong>Laju Perubahan Sesaat:</strong> Jika s = f(t) adalah fungsi posisi, maka f′(a) adalah kecepatan sesaat.</li>
+        <li><strong>Laju Perubahan Rata-rata:</strong> f(b) − f(a) / (b − a), yaitu kemiringan garis sekan.</li>
+      </ul>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Diferensiabilitas</h3>
+      <p class="mb-4">Fungsi dikatakan diferensiabel pada titik <em>a</em> jika turunan f′(a) ada. Ini berarti grafik fungsi halus di titik itu tanpa sudut tajam atau garis singgung vertikal.</p>
+      <p class="mb-4"><strong>Kontinuitas vs Diferensiabilitas:</strong> Jika fungsi diferensiabel, maka pasti kontinu. Tapi fungsi kontinu belum tentu diferensiabel.</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Turunan Satu Sisi</h3>
+      <p class="mb-4">Turunan tangan kanan: limₕ→0⁺ (f(a + h) − f(a)) / h<br>Turunan tangan kiri: limₕ→0⁻ (f(a + h) − f(a)) / h</p>
+
+      <h3 class="text-xl font-semibold mt-6 mb-2">Fungsi Turunan dan Aturan Emas</h3>
+      <p class="mb-4">Jika kita menerapkan definisi turunan ke semua titik, kita dapat fungsi baru yang disebut fungsi turunan f′(x). Prosesnya disebut <em>diferensiasi</em>.</p>
+
+      <h4 class="text-lg font-semibold mt-4 mb-2">Aturan Dasar Diferensiasi:</h4>
+      <ul class="list-disc ml-6 mb-4">
+        <li><strong>Aturan Konstanta:</strong> f(x) = c → f′(x) = 0</li>
+        <li><strong>Aturan Pangkat:</strong> f(x) = xⁿ → f′(x) = n·xⁿ⁻¹</li>
+        <li><strong>Aturan Perkalian Konstanta:</strong> g(x) = c·f(x) → g′(x) = c·f′(x)</li>
+        <li><strong>Penjumlahan/Pengurangan:</strong> h(x) = f(x) ± g(x) → h′(x) = f′(x) ± g′(x)</li>
+      </ul>
+
+      <h4 class="text-lg font-semibold mt-4 mb-2">Notasi Turunan:</h4>
+      <ul class="list-disc ml-6">
+        <li><strong>Notasi Lagrange:</strong> f′(x), f″(x), f⁽ⁿ⁾(x)</li>
+        <li><strong>Notasi Leibniz:</strong> dy/dx, d²y/dx², dⁿy/dxⁿ</li>
+        <li><strong>Notasi Euler:</strong> Dₓf(x), D²ₓf(x)</li>
+      </ul>
+  </section>
+
+  <!-- Tambahkan section berikutnya seperti ini -->
+  <section id="chain" class="container mx-auto bg-white rounded-xl shadow-lg p-10 mb-10">
+    <h2 class="text-3xl font-bold text-pink-600 mb-4">Chain Rule</h2>
+      <p class="leading-relaxed mb-4">Pernahkah kamu menghadapi fungsi yang terlihat seperti 'fungsi di dalam fungsi'? Misalnya, <em>sin(x²)</em> atau <em>(3x + x²)²</em>? Di sinilah Aturan Rantai menjadi pahlawan! Aturan ini adalah salah satu teknik diferensiasi paling fundamental, memungkinkan kita untuk menghitung turunan dari fungsi-fungsi komposisi yang kompleks dengan elegan.</p>
+
+      <h3 class="text-xl font-semibold text-primary mt-4 mb-2">Memahami Aturan Rantai</h3>
+      <p class="mb-4">Aturan Rantai digunakan ketika kita memiliki fungsi <em>y</em> yang bergantung pada variabel <em>u</em>, dan <em>u</em> sendiri bergantung pada variabel <em>x</em>. Artinya, <em>y = f(u)</em> dan <em>u = g(x)</em>, sehingga <em>y = f(g(x))</em>.</p>
+      <p class="mb-4">Fungsi <em>g(x)</em> disebut sebagai 'lapisan dalam', sementara <em>f(x)</em> adalah 'lapisan luar'.</p>
+      <p class="mb-4"><strong>Rumus Aturan Rantai:</strong> <code>dy/dx = dy/du ⋅ du/dx = f'[g(x)] ⋅ g'(x)</code></p>
+
+      <h3 class="text-xl font-semibold text-primary mt-4 mb-2">Aturan-Aturan Emas Lainnya untuk Diferensiasi</h3>
+      <ul class="list-disc list-inside mb-4">
+        <li><strong>Aturan Produk:</strong> Jika <em>h(x) = f(x)g(x)</em>, maka <em>h'(x) = f'(x)g(x) + f(x)g'(x)</em>.</li>
+        <li><strong>Aturan Hasil Bagi:</strong> Jika <em>h(x) = f(x)/g(x)</em>, maka <em>h'(x) = (g(x)f'(x) − f(x)g'(x)) / [g(x)]²</em>.</li>
+        <li><strong>Turunan Fungsi Trigonometri:</strong>
+          <ul class="list-disc ml-6">
+            <li>D(sin x) = cos x</li>
+            <li>D(cos x) = −sin x</li>
+            <li>D(tan x) = sec² x</li>
+            <li>D(cot x) = −csc² x</li>
+            <li>D(sec x) = sec x tan x</li>
+            <li>D(csc x) = −csc x cot x</li>
+          </ul>
+        </li>
+        <li><strong>Turunan Fungsi Eksponensial:</strong> D(a^x) = (ln a) a^x, dan D(e^x) = e^x</li>
+        <li><strong>Turunan Fungsi Logaritma:</strong> D(logₐx) = 1 / (ln a ⋅ x), dan D(ln x) = 1/x</li>
+      </ul>
+  </section>
+
+  <section id="riemann" class="container mx-auto bg-white rounded-xl shadow-lg p-10 mb-10">
+    <h2 class="text-3xl font-bold text-pink-600 mb-4">Riemann Sum</h2>
+      <p class="leading-relaxed mb-4">Bayangkan kamu ingin menghitung luas area di bawah kurva yang melengkung, tetapi kamu tidak memiliki rumus geometris yang pas. Di sinilah <strong>Riemann Sum</strong> datang sebagai penyelamat! Ini adalah metode perkiraan yang brilian untuk menemukan luas tersebut, dan yang lebih menakjubkan, ini adalah jembatan menuju konsep integral tentu yang lebih presisi.</p>
+      <h3 class="text-xl font-semibold text-primary mt-4 mb-2">Konsep Dasar Riemann Sum</h3>
+      <p class="mb-4">Ide utamanya adalah membagi area di bawah kurva menjadi serangkaian persegi panjang atau trapesium yang sempit, menghitung luas masing-masing, dan kemudian menjumlahkannya. Semakin banyak pembagian yang kita lakukan, semakin akurat perkiraan luasnya.</p>
+      <p class="mb-4"><strong>Notasi Penjumlahan (Sigma):</strong> Untuk menyederhanakan penulisan penjumlahan deret, kita menggunakan notasi Sigma (&Sigma;). Ini seperti perintah "jumlahkan semua ini!". Misalnya, &sum;<sub>i=0</sub><sup>3</sup> x<sub>i</sub> = x₀ + x₁ + x₂ + x₃.</p>
+      <h4 class="text-lg font-semibold mt-4">Langkah-Langkah Utama:</h4>
+      <ul class="list-decimal list-inside mb-4">
+        <li><strong>Pembagian Interval:</strong> Interval [a, b] dibagi menjadi <em>n</em> subinterval, masing-masing dengan lebar &Delta;x = (b − a) / n.</li>
+        <li><strong>Pendekatan Luas dengan Persegi Panjang:</strong>
+          <ul class="list-disc ml-6">
+            <li><strong>Jumlah Kiri (Left Riemann Sum):</strong> I<sub>L</sub> = &sum;<sub>i=0</sub><sup>n−1</sup> f(x<sub>i</sub>) &Delta;x</li>
+            <li><strong>Jumlah Kanan (Right Riemann Sum):</strong> I<sub>R</sub> = &sum;<sub>i=1</sub><sup>n</sup> f(x<sub>i</sub>) &Delta;x</li>
+          </ul>
+        </li>
+      </ul>
+      <h3 class="text-xl font-semibold text-primary mt-4 mb-2">Jembatan Menuju Integral Tentu</h3>
+      <p class="mb-4">Ketika jumlah subinterval n &rarr; &infin;, maka lebar &Delta;x &rarr; 0 dan:</p>
+      <p class="mb-4"><code>&int;<sub>a</sub><sup>b</sup> f(x) dx = lim<sub>n&rarr;&infin;</sub> &sum;<sub>i=0</sub><sup>n−1</sup> f(x<sub>i</sub>) &Delta;x</code></p>
+      <p class="mb-4">Jika <em>f(x<sub>i</sub>)</em> negatif, maka <strong>area bisa bernilai negatif</strong> karena berada di bawah sumbu x.</p>
+  </section>
+
+  <section id="integral-tentu" class="container mx-auto bg-white rounded-xl shadow-lg p-10 mb-10">
+    <h2 class="text-3xl font-bold text-pink-600 mb-4">Integral Tentu</h2>
+    <p class="leading-relaxed mb-4">(Penjelasan dan visualisasi integral tentu)</p>
+  </section>
+
+  <section id="integral-tak-tentu" class="container mx-auto bg-white rounded-xl shadow-lg p-10 mb-10">
+    <h2 class="text-3xl font-bold text-pink-600 mb-4">Integral Tak Tentu</h2>
+    <p class="leading-relaxed mb-4">(Penjelasan dan contoh penggunaan integral tak tentu)</p>
+  </section>
+
+  <section id="turunan-numerik" class="container mx-auto bg-white rounded-xl shadow-lg p-10 mb-10">
+    <h2 class="text-3xl font-bold text-pink-600 mb-4">Turunan Numerik</h2>
+    <p class="leading-relaxed mb-4">(Contoh pendekatan numerik untuk turunan)</p>
+  </section>
+
+  <section id="integral-numerik" class="container mx-auto bg-white rounded-xl shadow-lg p-10 mb-10">
+    <h2 class="text-3xl font-bold text-pink-600 mb-4">Integral Numerik</h2>
+    <p class="leading-relaxed mb-4">(Penjelasan pendekatan numerik seperti trapezoid, simpson)</p>
+  </section>
+
+  <!-- ✅ SCRIPT: Navbar Active Link Saat Scroll -->
+  <script>
+    const navLinks = document.querySelectorAll(".nav-link");
+    const sections = document.querySelectorAll("section");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          navLinks.forEach(link => link.classList.remove("text-pink-600", "font-bold", "underline"));
+          const activeLink = document.querySelector(`a[href="#${entry.target.id}"]`);
+          if (activeLink) {
+            activeLink.classList.add("text-pink-600", "font-bold", "underline");
+          }
+        }
+      });
+    }, {
+      threshold: 0.6
+    });
+
+    sections.forEach(section => observer.observe(section));
+  </script>
+
+</body>
+</html>
